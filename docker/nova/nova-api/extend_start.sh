@@ -3,9 +3,11 @@
 # Bootstrap and exit if KOLLA_BOOTSTRAP variable is set. This catches all cases
 # of the KOLLA_BOOTSTRAP variable being set, including empty.
 if [[ "${!KOLLA_BOOTSTRAP[@]}" ]]; then
-    nova-manage db sync
     nova-manage api_db sync
-    nova-manage db online_data_migrations
+    if [[ ! $(nova-manage cell_v2 map_cell0) =~ "Cell0 is already setup" ]]; then
+        nova-manage db sync
+    fi
+    nova-manage cell_v2 create_cell --name cell1
     exit 0
 fi
 

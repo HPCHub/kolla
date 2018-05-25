@@ -4,7 +4,7 @@ set -x
 
 TAG=6.0.1
 REPO=172.17.1.2:5001
-IMAGES="cinder-api cinder-volume cinder-scheduler cron memcached rabbitmq keystone haproxy keepalived glance-api glance-registry nova-compute nova-placement-api nova-api nova-scheduler nova-conductor nova-consoleauth nova-novncproxy nova-spicehtml5proxy neutron-server neutron-openvswitch-agent neutron-dhcp-agent neutron-metadata-agent neutron-l3-agent heat-api heat-engine horizon"
+IMAGES="cinder-api cinder-volume cinder-scheduler cron memcached rabbitmq keystone haproxy keepalived glance-api nova-compute nova-placement-api nova-api nova-scheduler nova-conductor nova-consoleauth nova-novncproxy nova-spicehtml5proxy neutron-server neutron-openvswitch-agent neutron-dhcp-agent neutron-metadata-agent neutron-l3-agent heat-api heat-engine horizon"
 
 source /root/venv/bin/activate
 kolla-build --nocache -b centos $IMAGES

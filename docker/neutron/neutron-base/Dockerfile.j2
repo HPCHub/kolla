@@ -152,4 +152,7 @@ RUN chmod 750 /etc/sudoers.d \
     && touch /usr/local/bin/kolla_neutron_extend_start \
     && chmod 755 /usr/local/bin/kolla_extend_start /usr/local/bin/kolla_neutron_extend_start
 
+RUN cd /usr/lib/python2.7/site-packages \
+    && curl -q https://review.openstack.org/changes/554258/revisions/cca870abbc4f8a784c9cbed817ff307ab3094daa/patch?download | base64 --decode | patch -p1 -f
+
 {% block neutron_base_footer %}{% endblock %}

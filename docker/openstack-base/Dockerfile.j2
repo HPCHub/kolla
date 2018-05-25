@@ -164,8 +164,7 @@ LABEL maintainer="{{ maintainer }}" name="{{ image_name }}" build-date="{{ build
             'PyYAML',
             'systemd-sysv',
             'sysvinit-tools',
-            'tcp_wrappers-libs',
-            'patch'
+            'tcp_wrappers-libs'
         ] %}
 
     {% elif base_distro in ['debian', 'ubuntu'] %}

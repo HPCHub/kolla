@@ -172,7 +172,23 @@ _PROFILE_OPTS = [
                     'openvswitch',
                     'rabbitmq',
                 ],
-                help='Gate images')
+                help='Gate images'),
+    cfg.ListOpt('hpchub',
+                default=[
+                    'cinder',
+                    'cron',
+                    'memcached',
+                    'rabbitmq',
+                    'keystone',
+                    'haproxy',
+                    'keepalived',
+                    'glance',
+                    'nova',
+                    'neutron',
+                    'heat',
+                    'horizon',
+                ],
+                help='HPC Hub images')
 ]
 
 hostarch = os.uname()[4]
